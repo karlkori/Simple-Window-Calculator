@@ -26,14 +26,14 @@ $(function(){
     $('#progress').css('width','0');
     $('#progress_text').html('0% Complete');
 
-    //first_step
+//Обработка выбора типа окна
     $('form').submit(function(){ return false; });
-    $('#submit_first').click(function(){
+    $('#submit_step1').click(function(){
         //remove classes
-        $('#first_step input').removeClass('error').removeClass('valid');
+        $('#step1 input').removeClass('error').removeClass('valid');
 
         //ckeck if inputs aren't empty
-        var fields = $('#first_step input[type=text], #first_step input[type=password]');
+        var fields = $('#step1 input[type=text], #step1 input[type=password]');
         var error = 0;
         fields.each(function(){
             var value = $(this).val();
@@ -49,7 +49,7 @@ $(function(){
         
         if(!error) {
             if( $('#password').val() != $('#cpassword').val() ) {
-                    $('#first_step input[type=password]').each(function(){
+                    $('#step1 input[type=password]').each(function(){
                         $(this).removeClass('valid').addClass('error');
                         $(this).effect("shake", { times:3 }, 50);
                     });
@@ -61,8 +61,8 @@ $(function(){
                 $('#progress').css('width','113px');
                 
                 //slide steps
-                $('#first_step').slideUp();
-                $('#second_step').slideDown(); 
+                $('#step1').slideUp();
+                $('#step2').slideDown(); 
                 // выводим картинку окна выбраного типа не предыдущем шаге
                 win =  $("input[name='type']:checked").val();
                 $('.current_window_type').html('<img src="../img/types/'+win+'.jpg" >');    
@@ -70,10 +70,10 @@ $(function(){
         } else return false;
     });
 
-
-    $('#submit_second').click(function(){
+// Обработка выбора размеров и цвета окна
+    $('#submit_step2').click(function(){
         //remove classes
-        $('#second_step input').removeClass('error').removeClass('valid');
+        $('#step2 input').removeClass('error').removeClass('valid');
 
 
 
@@ -83,14 +83,129 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#second_step').slideUp();
-        $('#third_step').slideDown();     
+        $('#step2').slideUp();
+        $('#step3').slideDown();     
+
+
+    });
+
+// Обработка выбора створок
+    $('#submit_step3').click(function(){
+        //remove classes
+        $('#step3 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step3').slideUp();
+        $('#step4').slideDown();     
+
+
+    });
+
+// Обработка выбора ручек
+    $('#submit_step4').click(function(){
+        //remove classes
+        $('#step4 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step4').slideUp();
+        $('#step5').slideDown();     
+
+
+    });    
+
+// Обработка выбора стеклопакетов
+    $('#submit_step5').click(function(){
+        //remove classes
+        $('#step5 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step5').slideUp();
+        $('#step6').slideDown();     
+
+
+    });
+
+// Обработка выбора подоконника
+    $('#submit_step6').click(function(){
+        //remove classes
+        $('#step6 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step6').slideUp();
+        $('#step7').slideDown();     
+
+
+    });
+
+// Обработка выбора отлива
+    $('#submit_step7').click(function(){
+        //remove classes
+        $('#step7 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step7').slideUp();
+        $('#step8').slideDown();     
+
+
+    });
+
+// Обработка выбора москитки
+    $('#submit_step8').click(function(){
+        //remove classes
+        $('#step8 input').removeClass('error').removeClass('valid');
+
+
+
+
+        //update progress bar
+        $('#progress_text').html('66% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step8').slideUp();
+        $('#step9').slideDown();     
 
 
     });
 
 
-    $('#submit_third').click(function(){
+// 
+    $('#submit_step9').click(function(){
         //update progress bar
         $('#progress_text').html('100% Complete');
         $('#progress').css('width','339px');
@@ -105,23 +220,22 @@ $(function(){
             $('#gender').val(),
             $('#country').val()                       
         );
-        var tr = $('#fourth_step tr');
+        var tr = $('#step9 tr');
         tr.each(function(){
             //alert( fields[$(this).index()] )
             $(this).children('td:nth-child(2)').html(fields[$(this).index()]);
         });
                 
         //slide steps
-        $('#third_step').slideUp();
-        $('#fourth_step').slideDown();            
+        $('#step9').slideUp();
+        $('#step10').slideDown();            
     });
 
 
-    $('#submit_fourth').click(function(){
+    $('#submit_step10').click(function(){
         //send information to server
         //slide steps
-        $('#fourth_step').slideUp();
-        $('#first_step').slideDown(); 
+        $('#step10').slideUp();
 
     });
 

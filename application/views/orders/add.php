@@ -9,7 +9,7 @@
  
 	<div id="step-form">
         <form action="#" method="post">
-            <div id="first_step">    
+            <div id="step1">    
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Выберите тип изделия</legend>
                 <div class="form">
@@ -26,10 +26,10 @@
                 <div class="clear"></div>
             </fieldset>
             <hr />
-            <input class="btn btn-primary" type="submit" name="submit_first" id="submit_first" value="Выбрать размеры и цвет" />
+            <input class="btn btn-primary" type="submit" name="submit_step1" id="submit_step1" value="Далее" />
             </div>
 
-            <div id="second_step">
+            <div id="step2">
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Укажите размеры и цвет изделия</legend>
                 <div class="form">
@@ -52,10 +52,10 @@
                 <div class="clear"></div>
             </fieldset>
             <hr />
-            <input class="btn btn-primary" type="submit" name="submit_second" id="submit_second" value="Указать створки" />
+            <input class="btn btn-primary" type="submit" name="submit_step2" id="submit_step2" value="Далее" />
             </div>
 
-            <div id="third_step">
+            <div id="step3">
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Укажите где будут створки</legend>
                 <div class="form">
@@ -64,14 +64,73 @@
                 <div class="clear"></div>
             </fieldset>
             <hr />                
-                <input class="btn btn-primary" type="submit" name="submit_third" id="submit_third" value="Выбрать заполнение" />
+                <input class="btn btn-primary" type="submit" name="submit_step3" id="submit_step3" value="Далее" />
+            </div>
+
+            <div id="step4">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Выберите тип ручки</legend>
+                <div class="form">
+                
+                </div>
+                <div class="clear"></div>
+            </fieldset>
+            <hr />                
+                <input class="btn btn-primary" type="submit" name="submit_step4" id="submit_step4" value="Далее" />
+            </div>  
+
+            <div id="step5">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Выберите стеклопакет</legend>
+                <div class="form">
+                
+                </div>
+                <div class="clear"></div>
+            </fieldset>
+            <hr />                
+                <input class="btn btn-primary" type="submit" name="submit_step5" id="submit_step5" value="Далее" />
+            </div>                       
+
+            <div id="step6">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Выберите подоконник</legend>
+                <div class="form">
+                
+                </div>
+                <div class="clear"></div>
+            </fieldset>
+            <hr />                
+                <input class="btn btn-primary" type="submit" name="submit_step6" id="submit_step6" value="Далее" />
+            </div> 
+
+            <div id="step7">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Выберите отлив</legend>
+                <div class="form">
+                
+                </div>
+                <div class="clear"></div>
+            </fieldset>
+            <hr />                
+                <input class="btn btn-primary" type="submit" name="submit_step7" id="submit_step7" value="Далее" />
+            </div>
+
+            <div id="step8">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Выберите москитки</legend>
+                <div class="form">
+                
+                </div>
+                <div class="clear"></div>
+            </fieldset>
+            <hr />                
+                <input class="btn btn-primary" type="submit" name="submit_step8" id="submit_step8" value="Далее" />
             </div>
             
-            
             <!-- #fourth_step -->
-            <div id="fourth_step">
-                <h1>Стоимость изделия</h1>
-
+            <div id="step9">
+            <fieldset xmlns="http://www.w3.org/1999/xhtml">
+                <legend>Стоимость конструкции</legend>
                 <div class="form">
                     <div class="current_window_type" style="float: left;"></div>
                    
@@ -85,7 +144,8 @@
                     </table>
                 </div>
                 <div class="clear"></div>
-                <input class="btn-primary send submit" type="submit" name="submit_fourth" id="submit_fourth" value="Финиш" data-dismiss="modal" />            
+                </fieldset>
+                <input class="btn-primary send submit" type="submit" name="submit_step9" id="submit_step9" value="Финиш" data-dismiss="modal" />            
             </div>
             
         </form>

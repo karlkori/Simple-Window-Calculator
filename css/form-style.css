@@ -2,19 +2,32 @@
 input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner { border : none; } 
 input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
 
-.clear { clear: both; }
+.clear { 
+    clear: both; 
+}
 .modal-body{
-    background: url('../img/bgg.jpg') no-repeat;
+    background: url('../img/1334.png') repeat;
 }
 #step-form {
-    width: 750px;
+    width: 850px;
     margin: 0px auto;
     padding: 10px 0;
     overflow: hidden;
     position: relative;
 }
-    #step-form #first_step, #second_step, #third_step, #fourth_step { display: none; }
-    #step-form #first_step { display: block; }
+    #step-form #step1, 
+    #step2, 
+    #step3, 
+    #step4,
+    #step5,
+    #step6,
+    #step7,
+    #step8,
+    #step9,
+    #step10 { 
+        display: none; 
+    }
+    #step-form #step1 { display: block; }
 
     #step-form .form { 
         margin: 10px; 
@@ -74,7 +87,16 @@ input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
 }
 
 
-#submit_first, #submit_second, #submit_third, #submit_fourth{
+#submit_step1, 
+#submit_step2, 
+#submit_step3, 
+#submit_step4,
+#submit_step5, 
+#submit_step6, 
+#submit_step7, 
+#submit_step8,
+#submit_step9, 
+#submit_step10{
     float: right;
 }
 
