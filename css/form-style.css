@@ -1,0 +1,80 @@
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner { border : none; } 
+input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
+
+.clear { clear: both; }
+.modal-body{
+    background: url('../img/bgg.jpg') no-repeat;
+}
+#step-form {
+    width: 750px;
+    margin: 0px auto;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+    #step-form #first_step, #second_step, #third_step, #fourth_step { display: none; }
+    #step-form #first_step { display: block; }
+
+    #step-form .form { 
+        margin: 10px; 
+        padding: 0px auto;
+    }
+    
+    
+    #step-form table {
+        margin: 10px auto;
+        font-size: 14px;
+        font-weight: bold;
+    }
+        #step-form table td {
+            padding: 5px 5px;
+        }
+            #step-form table td:nth-child(2) {
+                color: #a90329;
+            }   
+
+    #step-form label {
+        color: #666;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        float: right;
+    }
+    
+
+#progress_bar {
+    background: url('../img/progress_bar.png') no-repeat;
+    width: 339px;
+    height: 24px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#progress {
+    background: url('../img/progress.png') repeat-x;
+    width: 0px;
+    height: 23px;
+    
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+#progress_text {
+    position: relative;
+    line-height: 21px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px #222;
+    width: 339px;
+    height: 24px;
+    top: -23px;
+    left: 0;
+}
+
+
+#submit_first, #submit_second, #submit_third, #submit_fourth{
+    float: right;
+}
+
