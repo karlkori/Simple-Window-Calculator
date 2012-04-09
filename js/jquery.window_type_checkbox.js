@@ -6,36 +6,17 @@
 
       // Creating the new checkbox markup:
       var checkBox = $('<span>',{
-        class : originalCheckBox.attr('id')+' type '+(this.checked?'checked':''),
+        class : originalCheckBox.attr('id')+' wtype '+(this.checked?'checked':''),
         html: ''
       });
 
       // Inserting the new checkbox, and hiding the original:
       checkBox.insertAfter(originalCheckBox.hide());
+      
+
       checkBox.click(function(){
-        $("#type1").attr("checked",false);
-        $(".type1").removeClass("checked");
-        
-        $("#type2").attr("checked",false);
-        $(".type2").removeClass("checked");
-        
-        $("#type3").attr("checked",false);
-        $(".type3").removeClass("checked");
-        
-        $("#type4").attr("checked",false);
-        $(".type4").removeClass("checked");
-        
-        $("#type5").attr("checked",false);
-        $(".type5").removeClass("checked");
-        
-        $("#type6").attr("checked",false);
-        $(".type6").removeClass("checked");
-        
-        $("#type7").attr("checked",false);
-        $(".type7").removeClass("checked");
-        
-        $("#type8").attr("checked",false);
-        $(".type8").removeClass("checked");
+        $('input[name="wtype"]').attr("checked",false);
+        $('.wtype').removeClass("checked");
         
         checkBox.toggleClass('checked');
         
@@ -53,6 +34,8 @@
   };
 })(jQuery);
 
+
+// меняем чекбокмы на превюшки окон
 $(document).ready(function(){
-  $('.wtype').window_type_checkbox();
+  $('input[name="wtype"]').window_type_checkbox();
 });

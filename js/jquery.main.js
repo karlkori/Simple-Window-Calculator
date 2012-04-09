@@ -29,8 +29,25 @@ $(function(){
 //Обработка выбора типа окна
     $('form').submit(function(){ return false; });
     $('#submit_step1').click(function(){
+
+        //update progress bar
+        $('#progress_text').html('33% Complete');
+        $('#progress').css('width','113px');
+        
+        //slide steps
+        $('#step1').slideUp('fast');
+        $('#step2').slideDown('fast');
+
+        // выводим картинку окна выбраного типа не предыдущем шаге
+        type =  $("input[name='wtype']:checked").val();
+        //$('.current_window_type').html('<img src="../img/windows/wtype' + type + '_white.png" >');
+        $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
+    });
+
+// Обработка выбора размеров и цвета окна
+    $('#submit_step2').click(function(){
         //remove classes
-        $('#step1 input').removeClass('error').removeClass('valid');
+        $('#step2 input').removeClass('error').removeClass('valid');
 
         //ckeck if inputs aren't empty
         var fields = $('#step1 input[type=text], #step1 input[type=password]');
@@ -45,36 +62,7 @@ $(function(){
             } else {
                 $(this).addClass('valid');
             }
-        });        
-        
-        if(!error) {
-            if( $('#password').val() != $('#cpassword').val() ) {
-                    $('#step1 input[type=password]').each(function(){
-                        $(this).removeClass('valid').addClass('error');
-                        $(this).effect("shake", { times:3 }, 50);
-                    });
-                    
-                    return false;
-            } else {   
-                //update progress bar
-                $('#progress_text').html('33% Complete');
-                $('#progress').css('width','113px');
-                
-                //slide steps
-                $('#step1').slideUp();
-                $('#step2').slideDown(); 
-                // выводим картинку окна выбраного типа не предыдущем шаге
-                win =  $("input[name='type']:checked").val();
-                $('.current_window_type').html('<img src="../img/types/'+win+'.jpg" >');    
-            }               
-        } else return false;
-    });
-
-// Обработка выбора размеров и цвета окна
-    $('#submit_step2').click(function(){
-        //remove classes
-        $('#step2 input').removeClass('error').removeClass('valid');
-
+        });
 
 
 
@@ -83,8 +71,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step2').slideUp();
-        $('#step3').slideDown();     
+        $('#step2').slideUp('fast');
+        $('#step3').slideDown('fast');     
 
 
     });
@@ -102,8 +90,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step3').slideUp();
-        $('#step4').slideDown();     
+        $('#step3').slideUp('fast');
+        $('#step4').slideDown('fast');     
 
 
     });
@@ -121,8 +109,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step4').slideUp();
-        $('#step5').slideDown();     
+        $('#step4').slideUp('fast');
+        $('#step5').slideDown('fast');     
 
 
     });    
@@ -140,8 +128,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step5').slideUp();
-        $('#step6').slideDown();     
+        $('#step5').slideUp('fast');
+        $('#step6').slideDown('fast');     
 
 
     });
@@ -159,8 +147,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step6').slideUp();
-        $('#step7').slideDown();     
+        $('#step6').slideUp('fast');
+        $('#step7').slideDown('fast');     
 
 
     });
@@ -178,8 +166,8 @@ $(function(){
         $('#progress').css('width','226px');
         
         //slide steps
-        $('#step7').slideUp();
-        $('#step8').slideDown();     
+        $('#step7').slideUp('fast');
+        $('#step8').slideDown('fast');     
 
 
     });
@@ -190,29 +178,12 @@ $(function(){
         $('#step8 input').removeClass('error').removeClass('valid');
 
 
-
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
-        
-        //slide steps
-        $('#step8').slideUp();
-        $('#step9').slideDown();     
-
-
-    });
-
-
-// 
-    $('#submit_step9').click(function(){
-        //update progress bar
-        $('#progress_text').html('100% Complete');
+       $('#progress_text').html('100% Complete');
         $('#progress').css('width','339px');
 
-        //prepare the fourth step
+// Выводим все данные получение с формы
         var fields = new Array(
-            $("input[name='type']:checked").val(),
+            $("input[name='wtype']:checked").val(),
             $('#window_width').val() + ' x ' + $('#window_width').val(),
             $("input[name='window_color']:checked").val(),
             $('#firstname').val() + ' ' + $('#lastname').val(),
@@ -225,18 +196,155 @@ $(function(){
             //alert( fields[$(this).index()] )
             $(this).children('td:nth-child(2)').html(fields[$(this).index()]);
         });
-                
+
+
+
+        //update progress bar
+        $('#progress_text').html('100% Complete');
+        $('#progress').css('width','226px');
+        
+        //slide steps
+        $('#step8').slideUp('fast');
+        $('#step9').slideDown('fast');     
+
+
+    });
+
+
+// 
+    $('#submit_step9').click(function(){
+
+  
         //slide steps
         $('#step9').slideUp();
-        $('#step10').slideDown();            
+        
     });
 
+    $('.back_step0').click(function(){
+        $('#step1').slideUp();
+        
+    });
+    $('.back_step1').click(function(){
+        $('#step2').slideUp();
+        $('#step1').slideDown();  
+        
+    });
+    $('.back_step2').click(function(){
+        $('#step3').slideUp();
+        $('#step2').slideDown();  
+        
+    });
+    $('.back_step3').click(function(){
+        $('#step4').slideUp();
+        $('#step3').slideDown();  
+        
+    });
+    $('.back_step4').click(function(){
+        $('#step5').slideUp();
+        $('#step4').slideDown();  
+        
+    });
+    $('.back_step5').click(function(){
+        $('#step6').slideUp();
+        $('#step5').slideDown();  
+        
+    });
+    $('.back_step6').click(function(){
+        $('#step7').slideUp();
+        $('#step6').slideDown();  
+        
+    });
+    $('.back_step7').click(function(){
+        $('#step8').slideUp();
+        $('#step7').slideDown();  
+        
+    });
+    $('.back_step8').click(function(){
+        $('#step9').slideUp();
+        $('#step8').slideDown();  
+        
+    });
 
-    $('#submit_step10').click(function(){
-        //send information to server
-        //slide steps
-        $('#step10').slideUp();
+    var stworka = 1;
+
+    $(".current_window_type").click(function(e) {        
+        var offset = $(this).offset();
+        var clickX = (e.pageX - offset.left);
+        var clickY = (e.pageY - offset.top);
+        //alert("X: " + relativeX + "  Y: " + relativeY + "-" + $(this).width());
+
+        if ( $('.current_window_type div').hasClass('wtype1_white') ) {
+            switch (stworka) {
+            case 0:
+                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
+                stworka++;
+                break;
+            case 1:
+                $('.current_window_type').html('<div class="wtype' + type + '_white"><img class="over" src="../img/windows/wtype'+type+'_white_l.png" ></div>');
+                stworka++;
+                break;
+            case 2:
+                $('.current_window_type').html('<div class="wtype' + type + '_white"><img class="over" src="../img/windows/wtype'+type+'_white_r.png" ></div>');
+                stworka = 0;
+                break;
+            default:
+                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
+                stworka = 1;
+                break;
+            }
+        } else if ( $('.current_window_type div').hasClass('wtype1_brown') ) {
+            switch (stworka) {
+            case 0:
+                $('.current_window_type').html('<div class="wtype' + type + '_brown"></div>');
+                stworka++;
+                break;
+            case 1:
+                $('.current_window_type').html('<div class="wtype' + type + '_brown"><img class="over" src="../img/windows/wtype'+type+'_brown_l.png" ></div>');
+                stworka++;
+                break;
+            case 2:
+                $('.current_window_type').html('<div class="wtype' + type + '_brown"><img class="over" src="../img/windows/wtype'+type+'_brown_r.png" ></div>');
+                stworka = 0;
+                break;
+            default:
+                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
+                stworka = 1;
+                break;
+            }
+        } else if ( $('.current_window_type div').hasClass('wtype2_white') ) {
+            a = Math.floor(clickX/180)+1;
+            alert(a);
+        } else if ( $('.current_window_type div').hasClass('wtype2_brown') ) {
+            alert('2 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype3_white') ) {
+            alert('3 white');
+        } else if ( $('.current_window_type div').hasClass('wtype3_brown') ) {
+            alert('3 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype4_white') ) {
+            alert('4 white');
+        } else if ( $('.current_window_type div').hasClass('wtype4_brown') ) {
+            alert('4 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype5_white') ) {
+            alert('5 white');
+        } else if ( $('.current_window_type div').hasClass('wtype5_brown') ) {
+            alert('5 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype6_white') ) {
+            alert('6 white');
+        } else if ( $('.current_window_type div').hasClass('wtype6_brown') ) {
+            alert('6 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype7_white') ) {
+            alert('7 white');
+        } else if ( $('.current_window_type div').hasClass('wtype7_brown') ) {
+            alert('7 brown');
+        } else if ( $('.current_window_type div').hasClass('wtype8_white') ) {
+            alert('8 white');
+        } else if ( $('.current_window_type div').hasClass('wtype8_brown') ) {
+            alert('8 brown');
+        }   
+           
+
 
     });
+
 
 });

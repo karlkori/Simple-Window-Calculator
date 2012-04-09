@@ -13,11 +13,11 @@ public $data = array();
 */
 public function __construct()
 {
-	parent::__construct();
-	$this->load->model('crud_model');
-	$this->load->model('orders_model');
-	$this->data['title'] = 'Оконный калькулятор / Заказы';
-	//$this->output->enable_profiler('TRUE');
+parent::__construct();
+$this->load->model('crud_model');
+$this->load->model('orders_model');
+$this->data['title'] = 'Оконный калькулятор / Заказы';
+//$this->output->enable_profiler('TRUE');
 }
 
 

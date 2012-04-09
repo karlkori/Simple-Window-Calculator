@@ -20,7 +20,7 @@ body {
 
 /*Windows type thumbs*/
 
-.type{
+.wtype{
 	display: inline-block;
 	height:100px;
 	position:relative;
@@ -28,47 +28,146 @@ body {
 	padding: 10px;
 }
 
-.type.checked{
+.wtype.checked{
 	background-color: #FCFC62;
 }
 
-.type1{
-	background:url('../img/types/1_thumb.jpg') no-repeat 10px 10px;
+/* Превюшки типов окон */
+
+.wtype1_thumb{
+	background:url('../img/windows/wtype1_thumb.png') no-repeat 10px 10px;
 	min-width:75px;
 }
-.type2{
-	background:url('../img/types/2_thumb.jpg') no-repeat 10px 10px;
+.wtype2_thumb{
+	background:url('../img/windows/wtype2_thumb.png') no-repeat 10px 10px;
 	min-width:120px;	
 }
-.type3{
-	background:url('../img/types/3_thumb.jpg') no-repeat 10px 10px;
+.wtype3_thumb{
+	background:url('../img/windows/wtype3_thumb.png') no-repeat 10px 10px;
 	min-width:180px;
 }
-.type4{
-	background:url('../img/types/4_thumb.jpg') no-repeat 10px 10px;
+.wtype4_thumb{
+	background:url('../img/windows/wtype4_thumb.png') no-repeat 10px 10px;
 	min-width:200px;	
 }
-.type5{
-	background:url('../img/types/5_thumb.jpg') no-repeat 10px 10px;
+.wtype5_thumb{
+	background:url('../img/windows/wtype5_thumb.png') no-repeat 10px 10px;
 	min-width:129px;
 }
-.type6{
-	background:url('../img/types/6_thumb.jpg') no-repeat 10px 10px;
+.wtype6_thumb{
+	background:url('../img/windows/wtype6_thumb.png') no-repeat 10px 10px;
 	min-width:143px;	
 }
-.type7{
-	background:url('../img/types/7_thumb.jpg') no-repeat 10px 10px;
+.wtype7_thumb{
+	background:url('../img/windows/wtype7_thumb.png') no-repeat 10px 10px;
 	min-width:39px;
 }
-.type8{
-	background:url('../img/types/8_thumb.jpg') no-repeat 10px 10px;
+.wtype8_thumb{
+	background:url('../img/windows/wtype8_thumb.png') no-repeat 10px 10px;
 	min-width:39px;	
 }
 
-.current_window_type{
-	margin: 0px auto;
+/* Типы окон двух цветов*/
+
+.wtype1_white{
+	background:url('../img/windows/wtype1_white.png') no-repeat 0px 0px;
+	width: 226px;
 	height: 300px;
 }
+.wtype1_brown{
+	background:url('../img/windows/wtype1_brown.png') no-repeat 0px 0px;
+	width: 226px;
+	height: 300px;
+}
+.wtype2_white{
+	background:url('../img/windows/wtype2_white.png') no-repeat 0px 0px;
+	width: 360px;
+	height: 300px;
+}
+.wtype2_brown{
+	background:url('../img/windows/wtype2_brown.png') no-repeat 0px 0px;
+	width: 360px;
+	height: 300px;
+}
+.wtype3_white{
+	background:url('../img/windows/wtype3_white.png') no-repeat 0px 0px;
+	width: 540px;
+	height: 300px;
+}
+.wtype3_brown{
+	background:url('../img/windows/wtype3_brown.png') no-repeat 0px 0px;
+	width: 540px;
+	height: 300px;
+}
+.wtype4_white{
+	background:url('../img/windows/wtype4_white.png') no-repeat 0px 0px;
+	width: 600px;
+	height: 300px;
+}
+.wtype4_brown{
+	background:url('../img/windows/wtype4_brown.png') no-repeat 0px 0px;
+	width: 600px;
+	height: 300px;
+}
+.wtype5_white{
+	background:url('../img/windows/wtype5_white.png') no-repeat 0px 0px;
+	width: 386px;
+	height: 300px;
+}
+.wtype5_brown{
+	background:url('../img/windows/wtype5_brown.png') no-repeat 0px 0px;
+	width: 386px;
+	height: 300px;
+}
+.wtype6_white{
+	background:url('../img/windows/wtype6_white.png') no-repeat 0px 0px;
+	width: 428px;
+	height: 300px;
+}
+.wtype6_brown{
+	background:url('../img/windows/wtype6_brown.png') no-repeat 0px 0px;
+	width: 428px;
+	height: 300px;
+}
+.wtype7_white{
+	background:url('../img/windows/wtype7_white.png') no-repeat 0px 0px;
+	width: 116px;
+	height: 300px;
+}
+.wtype7_brown{
+	background:url('../img/windows/wtype7_brown.png') no-repeat 0px 0px;
+	width: 116px;
+	height: 300px;
+}
+.wtype8_white{
+	background:url('../img/windows/wtype8_white.png') no-repeat 0px 0px;
+	width: 116px;
+	height: 300px;
+}
+.wtype8_brown{
+	background:url('../img/windows/wtype8_brown.png') no-repeat 0px 0px;
+	width: 116px;
+	height: 300px;
+}
+
+
+
+
+
+.current_window_type{
+	margin: 0px auto;
+	padding: 0px auto;
+	position: relative;
+}
+
+
+.current_window_type div{
+	z-index: 100;
+}
+.current_window_type img{
+	z-index: 101;
+}
+
 
 #window_width{
 	width: 30px;
