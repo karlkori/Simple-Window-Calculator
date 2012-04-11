@@ -48,7 +48,7 @@ $(function(){
         render(win);
 
         
-        //slide steps
+
         $('#step2').slideUp('fast');
         $('#step3').slideDown('fast');     
     });
