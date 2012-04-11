@@ -30,6 +30,8 @@ body {
 
 .wtype.checked{
 	background-color: #FCFC62;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
 }
 
 /* Превюшки типов окон */
@@ -158,14 +160,14 @@ body {
 	margin: 0px auto;
 	padding: 0px auto;
 	position: relative;
-	box-shadow:0 0 25px 0 #555555;
-	-webkit-box-shadow:0 0 25px 0 #555555;
-	-moz-box-shadow:0 0 25px 0 #555555;
 }
 
 
 .current_window_type div{
 	z-index: 100;
+	box-shadow:0 0 25px 0 #555555;
+	-webkit-box-shadow:0 0 25px 0 #555555;
+	-moz-box-shadow:0 0 25px 0 #555555;	
 }
 .current_window_type img{
 	z-index: 101;
@@ -179,8 +181,6 @@ body {
 #window_height{
 	width: 30px;
 }
-
-
 
 .color{
 	display: block;

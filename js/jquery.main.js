@@ -213,7 +213,8 @@ $(function(){
 
     var stworka = 1;
 
-    $(".current_window_type").click(function(e) {        
+
+    $("#step3 .current_window_type").click(function(e) {        
         var offset = $(this).offset();
         var clickX = (e.pageX - offset.left);
         var clickY = (e.pageY - offset.top);
@@ -256,8 +257,10 @@ $(function(){
                 stworka = 1;
                 break;
             }
-        } else if ( $('.current_window_type div').hasClass('wtype2_white') ) {
-            a = Math.floor(clickX/180)+1;
+        } else if ( win.type == 2 ) {
+            var w = $('.current_window_type div').width();
+            w = w/2;
+            var a = Math.floor(clickX/w)+1;
             alert(a);
         } else if ( $('.current_window_type div').hasClass('wtype2_brown') ) {
             alert('2 brown');
