@@ -36,117 +36,117 @@ body {
 
 .wtype1_thumb{
 	background:url('../img/windows/wtype1_thumb.png') no-repeat 10px 10px;
-	min-width:75px;
+	min-width:62px;
 }
 .wtype2_thumb{
 	background:url('../img/windows/wtype2_thumb.png') no-repeat 10px 10px;
-	min-width:120px;	
+	min-width:93px;	
 }
 .wtype3_thumb{
 	background:url('../img/windows/wtype3_thumb.png') no-repeat 10px 10px;
-	min-width:180px;
+	min-width:138px;
 }
 .wtype4_thumb{
 	background:url('../img/windows/wtype4_thumb.png') no-repeat 10px 10px;
-	min-width:200px;	
+	min-width:183px;	
 }
 .wtype5_thumb{
 	background:url('../img/windows/wtype5_thumb.png') no-repeat 10px 10px;
-	min-width:129px;
+	min-width:138px;
 }
 .wtype6_thumb{
 	background:url('../img/windows/wtype6_thumb.png') no-repeat 10px 10px;
-	min-width:143px;	
+	min-width:183px;	
 }
 .wtype7_thumb{
 	background:url('../img/windows/wtype7_thumb.png') no-repeat 10px 10px;
-	min-width:39px;
+	min-width:35px;
 }
 .wtype8_thumb{
 	background:url('../img/windows/wtype8_thumb.png') no-repeat 10px 10px;
-	min-width:39px;	
+	min-width:35px;	
 }
 
 /* Типы окон двух цветов*/
 
 .wtype1_white{
 	background:url('../img/windows/wtype1_white.png') no-repeat 0px 0px;
-	width: 226px;
+	width: 188px;
 	height: 300px;
 }
 .wtype1_brown{
 	background:url('../img/windows/wtype1_brown.png') no-repeat 0px 0px;
-	width: 226px;
+	width: 188px;
 	height: 300px;
 }
 .wtype2_white{
 	background:url('../img/windows/wtype2_white.png') no-repeat 0px 0px;
-	width: 360px;
+	width: 281px;
 	height: 300px;
 }
 .wtype2_brown{
 	background:url('../img/windows/wtype2_brown.png') no-repeat 0px 0px;
-	width: 360px;
+	width: 281px;
 	height: 300px;
 }
 .wtype3_white{
 	background:url('../img/windows/wtype3_white.png') no-repeat 0px 0px;
-	width: 540px;
+	width: 415px;
 	height: 300px;
 }
 .wtype3_brown{
 	background:url('../img/windows/wtype3_brown.png') no-repeat 0px 0px;
-	width: 540px;
+	width: 415px;
 	height: 300px;
 }
 .wtype4_white{
 	background:url('../img/windows/wtype4_white.png') no-repeat 0px 0px;
-	width: 600px;
+	width: 549px;
 	height: 300px;
 }
 .wtype4_brown{
 	background:url('../img/windows/wtype4_brown.png') no-repeat 0px 0px;
-	width: 600px;
+	width: 549px;
 	height: 300px;
 }
 .wtype5_white{
 	background:url('../img/windows/wtype5_white.png') no-repeat 0px 0px;
-	width: 386px;
+	width: 415px;
 	height: 300px;
 }
 .wtype5_brown{
 	background:url('../img/windows/wtype5_brown.png') no-repeat 0px 0px;
-	width: 386px;
+	width: 415px;
 	height: 300px;
 }
 .wtype6_white{
 	background:url('../img/windows/wtype6_white.png') no-repeat 0px 0px;
-	width: 428px;
+	width: 549px;
 	height: 300px;
 }
 .wtype6_brown{
 	background:url('../img/windows/wtype6_brown.png') no-repeat 0px 0px;
-	width: 428px;
+	width: 549px;
 	height: 300px;
 }
 .wtype7_white{
 	background:url('../img/windows/wtype7_white.png') no-repeat 0px 0px;
-	width: 116px;
+	width: 107px;
 	height: 300px;
 }
 .wtype7_brown{
 	background:url('../img/windows/wtype7_brown.png') no-repeat 0px 0px;
-	width: 116px;
+	width: 107px;
 	height: 300px;
 }
 .wtype8_white{
 	background:url('../img/windows/wtype8_white.png') no-repeat 0px 0px;
-	width: 116px;
+	width: 107px;
 	height: 300px;
 }
 .wtype8_brown{
 	background:url('../img/windows/wtype8_brown.png') no-repeat 0px 0px;
-	width: 116px;
+	width: 107px;
 	height: 300px;
 }
 
@@ -158,6 +158,9 @@ body {
 	margin: 0px auto;
 	padding: 0px auto;
 	position: relative;
+	box-shadow:0 0 25px 0 #555555;
+	-webkit-box-shadow:0 0 25px 0 #555555;
+	-moz-box-shadow:0 0 25px 0 #555555;
 }
 
 
@@ -201,3 +204,109 @@ body {
 	width:34px;
 	height: 35px;	
 }
+
+
+/**************STEP-FORM***********************************/
+
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner { border : none; } 
+input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
+
+.clear { 
+    clear: both; 
+}
+.modal-body{
+    background: url('../img/checkered_pattern.png') repeat;
+}
+#step-form {
+    width: 850px;
+    margin: 0px auto;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+    #step-form #step1, 
+    #step2, 
+    #step3, 
+    #step4,
+    #step5,
+    #step6,
+    #step7,
+    #step8,
+    #step9,
+    #step10 { 
+        display: none; 
+    }
+    #step-form #step1 { display: block; }
+
+    #step-form .form { 
+        margin: 10px; 
+        padding: 0px auto;
+    }
+    
+    
+    #step-form table {
+        margin: 10px auto;
+        font-size: 14px;
+        font-weight: bold;
+    }
+        #step-form table td {
+            padding: 5px 5px;
+        }
+            #step-form table td:nth-child(2) {
+                color: #a90329;
+            }   
+
+    #step-form label {
+        color: #666;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        float: right;
+    }
+    
+
+#progress_bar {
+    background: url('../img/progress_bar.png') no-repeat;
+    width: 339px;
+    height: 24px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#progress {
+    background: url('../img/progress.png') repeat-x;
+    width: 0px;
+    height: 23px;
+    
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+#progress_text {
+    position: relative;
+    line-height: 21px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px #222;
+    width: 339px;
+    height: 24px;
+    top: -23px;
+    left: 0;
+}
+
+
+#submit_step1, 
+#submit_step2, 
+#submit_step3, 
+#submit_step4,
+#submit_step5, 
+#submit_step6, 
+#submit_step7, 
+#submit_step8,
+#submit_step9, 
+#submit_step10{
+    float: right;
+}
+

@@ -1,47 +1,39 @@
+function render(window){
+        $('.current_window_type').html('<div class="wtype' + win.type + '_' + win.color + '"></div>');
+}
+
+
+
+
 $(function(){
-    //original field values
-    var field_values = {
-            //id        :  value
-            'type'  : 'type',
-            'password'  : 'password',
-            'cpassword' : 'password',
-            'firstname'  : 'first name',
-            'lastname'  : 'last name',
-            'email'  : 'email address'
+
+
+    
+    // обект с параметрами нашего окна
+    win = {
+            'type'  : 1,
+            'width'  : 100,
+            'height' : 100,
+            'color'  : 'white',
+            'glass'  : '2-x кам',
+            'stv'  : [0,0,0,0]
     };
 
 
-    //inputfocus
-    $('input#username').inputfocus({ value: field_values['username'] });
-    $('input#password').inputfocus({ value: field_values['password'] });
-    $('input#cpassword').inputfocus({ value: field_values['cpassword'] }); 
-    $('input#lastname').inputfocus({ value: field_values['lastname'] });
-    $('input#firstname').inputfocus({ value: field_values['firstname'] });
-    $('input#email').inputfocus({ value: field_values['email'] }); 
 
-
-
-
-    //reset progress bar
-    $('#progress').css('width','0');
-    $('#progress_text').html('0% Complete');
 
 //Обработка выбора типа окна
     $('form').submit(function(){ return false; });
     $('#submit_step1').click(function(){
 
-        //update progress bar
-        $('#progress_text').html('33% Complete');
-        $('#progress').css('width','113px');
-        
-        //slide steps
+        // сохраняем выбраный тип окна
+        win.type =  $("input[name='wtype']:checked").val();
+        // рисуем окно по параметрам
+        render(win);
+       
+        // переходим на шаг 2
         $('#step1').slideUp('fast');
         $('#step2').slideDown('fast');
-
-        // выводим картинку окна выбраного типа не предыдущем шаге
-        type =  $("input[name='wtype']:checked").val();
-        //$('.current_window_type').html('<img src="../img/windows/wtype' + type + '_white.png" >');
-        $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
     });
 
 // Обработка выбора размеров и цвета окна
@@ -49,32 +41,16 @@ $(function(){
         //remove classes
         $('#step2 input').removeClass('error').removeClass('valid');
 
-        //ckeck if inputs aren't empty
-        var fields = $('#step1 input[type=text], #step1 input[type=password]');
-        var error = 0;
-        fields.each(function(){
-            var value = $(this).val();
-            if( value.length<4 || value==field_values[$(this).attr('id')] ) {
-                $(this).addClass('error');
-                $(this).effect("shake", { times:3 }, 50);
-                
-                error++;
-            } else {
-                $(this).addClass('valid');
-            }
-        });
 
+        // сохраняем выбраный тип окна
+        win.color =  $("input[name='window_color']:checked").val();
+        // рисуем окно по параметрам
+        render(win);
 
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step2').slideUp('fast');
         $('#step3').slideDown('fast');     
-
-
     });
 
 // Обработка выбора створок
@@ -83,11 +59,6 @@ $(function(){
         $('#step3 input').removeClass('error').removeClass('valid');
 
 
-
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step3').slideUp('fast');
@@ -104,9 +75,6 @@ $(function(){
 
 
 
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step4').slideUp('fast');
@@ -121,11 +89,6 @@ $(function(){
         $('#step5 input').removeClass('error').removeClass('valid');
 
 
-
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step5').slideUp('fast');
@@ -140,11 +103,6 @@ $(function(){
         $('#step6 input').removeClass('error').removeClass('valid');
 
 
-
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step6').slideUp('fast');
@@ -160,10 +118,6 @@ $(function(){
 
 
 
-
-        //update progress bar
-        $('#progress_text').html('66% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step7').slideUp('fast');
@@ -178,13 +132,11 @@ $(function(){
         $('#step8 input').removeClass('error').removeClass('valid');
 
 
-       $('#progress_text').html('100% Complete');
-        $('#progress').css('width','339px');
 
 // Выводим все данные получение с формы
         var fields = new Array(
             $("input[name='wtype']:checked").val(),
-            $('#window_width').val() + ' x ' + $('#window_width').val(),
+            $('#window_width').val() + ' x ' + $('#window_height').val(),
             $("input[name='window_color']:checked").val(),
             $('#firstname').val() + ' ' + $('#lastname').val(),
             $('#age').val(),
@@ -198,16 +150,10 @@ $(function(){
         });
 
 
-
-        //update progress bar
-        $('#progress_text').html('100% Complete');
-        $('#progress').css('width','226px');
         
         //slide steps
         $('#step8').slideUp('fast');
         $('#step9').slideDown('fast');     
-
-
     });
 
 
@@ -271,7 +217,6 @@ $(function(){
         var offset = $(this).offset();
         var clickX = (e.pageX - offset.left);
         var clickY = (e.pageY - offset.top);
-        //alert("X: " + relativeX + "  Y: " + relativeY + "-" + $(this).width());
 
         if ( $('.current_window_type div').hasClass('wtype1_white') ) {
             switch (stworka) {

@@ -34,7 +34,7 @@
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Укажите размеры и цвет изделия</legend>
                 <div class="form">
-                	<table border="1">
+                	<table border="0">
                 	<tr>
                 	<td><input type="text" name="window_height" id="window_height" /></td>
                 	<td><div class="current_window_type"></div></td>
@@ -61,6 +61,7 @@
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Укажите где будут створки</legend>
                 <div class="form">
+                    <div class="current_window_type"></div>
 				
 				</div>
                 <div class="clear"></div>

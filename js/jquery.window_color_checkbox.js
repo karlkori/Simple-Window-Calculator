@@ -6,12 +6,13 @@
 
       // Creating the new checkbox markup:
       var checkBox = $('<span>',{
-        class : originalColorCheckBox.attr('id')+' color '+(this.checked?'checked':''),
+        class : originalColorCheckBox.attr('id')+' color '+(this.checked ? 'checked' : ''),
         html: ''
       });
 
       // Inserting the new checkbox, and hiding the original:
       checkBox.insertAfter(originalColorCheckBox.hide());
+      
       checkBox.click(function(){
         $("#white").attr("checked",false);
         $(".color").removeClass("checked");
@@ -26,6 +27,9 @@
         
         // Synchronizing the original checkbox:
         originalColorCheckBox.attr('checked',isChecked);
+       
+        win.color = $("input[name='window_color']:checked").val();
+        render(win);
       });
       
       // Listening for changes on the original and affecting the new one:

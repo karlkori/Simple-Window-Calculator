@@ -13,14 +13,11 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="<?php echo base_url('/css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('/css/style.css'); ?>" rel="stylesheet">
-
-    <link href="<?php echo base_url('/css/form-style.css'); ?>" rel="stylesheet">
 
     <link rel="shortcut icon" href="<?php echo base_url('/img/favicon.ico'); ?>">
     <link rel="apple-touch-icon" href="<?php echo base_url('img/apple-touch-icon.png'); ?>">
-
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('img/apple-touch-icon-72x72.png'); ?>">
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url('img/apple-touch-icon-114x114.png'); ?>">
   </head>
@@ -51,13 +48,12 @@
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url('/js/jquery-1.7.1.min.js'); ?>"></script>
-    <script src="<?php echo base_url('/js/bootstrap.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('/js/jquery-1.7.1.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('/js/bootstrap.min.js'); ?>"></script>
 
     <script type="text/javascript" src="<?php echo base_url('/js/jquery.window_type_checkbox.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('/js/jquery.window_color_checkbox.js'); ?>"></script>
 
-    <script type="text/javascript" src="<?php echo base_url('/js/jquery.inputfocus-0.9.min.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('/js/jquery.main.js'); ?>"></script>
 
   </body>
