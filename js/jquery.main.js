@@ -1,5 +1,44 @@
-function render(window){
-        $('.current_window_type').html('<div class="wtype' + win.type + '_' + win.color + '"></div>');
+/**
+ * Строим окно по параметрам объекта window
+ *
+ */
+function render(){
+    console.log(win.stw);
+
+    // размер под створку для кажного типа окна
+    var delta = new Array();
+        delta[1] = 188;
+        delta[2] = (280/2);
+        delta[3] = (415/3);
+        delta[4] = (550/4);
+        delta[5] = (415/3);
+        delta[6] = (550/4);
+        delta[7] = 107;
+        delta[8] = 107;
+
+
+    var lr = new Array();
+    lr[0] = ""; // no need now
+    lr[1] = "_l";
+    lr[2] = "_r";
+
+
+    var htm = '';
+    // рама
+    htm += '<div class="wtype' + win.type + '_' + win.color + '">';
+    // створки
+    if (win.stw[0] != 0)
+        htm += '<img style="margin-left: ' + delta[win.type]*0 + 'px;" class="over1" src="../img/windows/wtype' + win.type + '_' + win.color + lr[win.stw[0]] +'.png" >';
+    if (win.stw[1] != 0)
+        htm += '<img style="margin-left: ' + delta[win.type]*1 + 'px;" class="over2" src="../img/windows/wtype' + win.type + '_' + win.color + lr[win.stw[1]] +'.png" >';
+    if (win.stw[2] != 0)
+        htm += '<img style="margin-left: ' + delta[win.type]*2 + 'px;" class="over3" src="../img/windows/wtype' + win.type + '_' + win.color + lr[win.stw[2]] +'.png" >';
+    if (win.stw[3] != 0)
+        htm += '<img style="margin-left: ' + delta[win.type]*3 + 'px;" class="over4" src="../img/windows/wtype' + win.type + '_' + win.color + lr[win.stw[3]] +'.png" >';
+
+    htm += '</div>';
+
+    $('.current_window_type').html(htm);
 }
 
 
@@ -7,16 +46,20 @@ function render(window){
 
 $(function(){
 
-
-    
-    // обект с параметрами нашего окна
+   
+    // объект с параметрами нашего окна по умолчанию
     win = {
-            'type'  : 1,
-            'width'  : 100,
-            'height' : 100,
-            'color'  : 'white',
-            'glass'  : '2-x кам',
-            'stv'  : [0,0,0,0]
+        'type'          : 1,               // тип окна
+        'width'         : 100,             // ширина окна
+        'height'        : 100,             // высота окна
+        'color'         : 'white',         // цвет окна
+        'glass'         : '2-x кам',       // тип стеклопакетов
+        'stw'           : [0,0,0,0],       // наличие створок
+        'handle'        : 1,               // тип ручки
+        'sill-type'     : 1,               // тип подоконного профиля
+        'sill-length'   : 1000,            // длинна подоконника
+        'tide-type'     : 1,               // тип подоконного профиля
+        'tide-length'   : 1000,            // длинна подоконника        
     };
 
 
@@ -29,7 +72,7 @@ $(function(){
         // сохраняем выбраный тип окна
         win.type =  $("input[name='wtype']:checked").val();
         // рисуем окно по параметрам
-        render(win);
+        render();
        
         // переходим на шаг 2
         $('#step1').slideUp('fast');
@@ -45,7 +88,7 @@ $(function(){
         // сохраняем выбраный тип окна
         win.color =  $("input[name='window_color']:checked").val();
         // рисуем окно по параметрам
-        render(win);
+        render();
 
         
 
@@ -211,7 +254,6 @@ $(function(){
         
     });
 
-    var stworka = 1;
 
 
     $("#step3 .current_window_type").click(function(e) {        
@@ -219,80 +261,188 @@ $(function(){
         var clickX = (e.pageX - offset.left);
         var clickY = (e.pageY - offset.top);
 
-        if ( $('.current_window_type div').hasClass('wtype1_white') ) {
-            switch (stworka) {
-            case 0:
-                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
-                stworka++;
-                break;
-            case 1:
-                $('.current_window_type').html('<div class="wtype' + type + '_white"><img class="over" src="../img/windows/wtype'+type+'_white_l.png" ></div>');
-                stworka++;
-                break;
-            case 2:
-                $('.current_window_type').html('<div class="wtype' + type + '_white"><img class="over" src="../img/windows/wtype'+type+'_white_r.png" ></div>');
-                stworka = 0;
-                break;
-            default:
-                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
-                stworka = 1;
-                break;
-            }
-        } else if ( $('.current_window_type div').hasClass('wtype1_brown') ) {
-            switch (stworka) {
-            case 0:
-                $('.current_window_type').html('<div class="wtype' + type + '_brown"></div>');
-                stworka++;
-                break;
-            case 1:
-                $('.current_window_type').html('<div class="wtype' + type + '_brown"><img class="over" src="../img/windows/wtype'+type+'_brown_l.png" ></div>');
-                stworka++;
-                break;
-            case 2:
-                $('.current_window_type').html('<div class="wtype' + type + '_brown"><img class="over" src="../img/windows/wtype'+type+'_brown_r.png" ></div>');
-                stworka = 0;
-                break;
-            default:
-                $('.current_window_type').html('<div class="wtype' + type + '_white"></div>');
-                stworka = 1;
-                break;
-            }
-        } else if ( win.type == 2 ) {
-            var w = $('.current_window_type div').width();
-            w = w/2;
-            var a = Math.floor(clickX/w)+1;
-            alert(a);
-        } else if ( $('.current_window_type div').hasClass('wtype2_brown') ) {
-            alert('2 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype3_white') ) {
-            alert('3 white');
-        } else if ( $('.current_window_type div').hasClass('wtype3_brown') ) {
-            alert('3 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype4_white') ) {
-            alert('4 white');
-        } else if ( $('.current_window_type div').hasClass('wtype4_brown') ) {
-            alert('4 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype5_white') ) {
-            alert('5 white');
-        } else if ( $('.current_window_type div').hasClass('wtype5_brown') ) {
-            alert('5 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype6_white') ) {
-            alert('6 white');
-        } else if ( $('.current_window_type div').hasClass('wtype6_brown') ) {
-            alert('6 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype7_white') ) {
-            alert('7 white');
-        } else if ( $('.current_window_type div').hasClass('wtype7_brown') ) {
-            alert('7 brown');
-        } else if ( $('.current_window_type div').hasClass('wtype8_white') ) {
-            alert('8 white');
-        } else if ( $('.current_window_type div').hasClass('wtype8_brown') ) {
-            alert('8 brown');
-        }   
-           
+        // получаем ширину окна, для определения выбраной створки
+        var cwidth = $('.current_window_type div').width();
+        
+
+        if (win.type == 1){
+                // проем один, значение хранится в win.stw[0]
+                switch (win.stw[0]) {
+                    case 0:
+                        render();
+                        win.stw[0]++;
+                        break;
+                    case 1:
+                        render();
+                        win.stw[0]++;
+                        break;
+                    case 2:
+                        render();
+                        win.stw[0] = 0;
+                        break;
+                    default:
+                        render();
+                        win.stw[0] = 1;
+                        break;
+                }
+        } else if (win.type == 2){
+                // получаем номер проема [0..3] ширину делим на 2 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/2));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+
+        } else if (win.type == 3){
+                // получаем номер проема [0..3] ширину делим на 3 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/3));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        } else if (win.type == 4){
+                // получаем номер проема [0..3] ширину делим на 4 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/4));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        } else if (win.type == 5){
+                // получаем номер проема [0..3] ширину делим на 3 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/3));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        } else if (win.type == 6){
+                // получаем номер проема [0..3] ширину делим на 4 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/4));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        } else if (win.type == 7){
+                // получаем номер проема [0..3] ширину делим на 1 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/1));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        } else if (win.type == 8){
+                // получаем номер проема [0..3] ширину делим на 1 - к-тво проемов в этом типе окна
+                var stw_num = Math.floor(clickX/(cwidth/1));
+                
+                switch (win.stw[stw_num]) {
+                    case 0:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 1:
+                        win.stw[stw_num]++;
+                        render();
+                        break;
+                    case 2:
+                        win.stw[stw_num] = 0;
+                        render();
+                        break;
+                    default:
+                        win.stw[stw_num] = 1;
+                        render();
+                        break;
+                }
+        }
 
 
     });
-
 
 });

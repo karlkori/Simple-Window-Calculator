@@ -61,8 +61,13 @@
             <fieldset xmlns="http://www.w3.org/1999/xhtml">
 				<legend>Укажите где будут створки</legend>
                 <div class="form">
-                    <div class="current_window_type"></div>
-				
+                    <table border="0">
+                    <tr>
+                    <td></td>
+                    <td><div class="current_window_type"></div></td>
+                    <td></td>
+                    </tr>
+                </table>
 				</div>
                 <div class="clear"></div>
             </fieldset>

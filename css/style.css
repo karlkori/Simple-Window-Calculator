@@ -153,13 +153,11 @@ body {
 }
 
 
-
-
-
 .current_window_type{
 	margin: 0px auto;
 	padding: 0px auto;
 	position: relative;
+	min-width: 107px;
 }
 
 
@@ -169,10 +167,30 @@ body {
 	-webkit-box-shadow:0 0 25px 0 #555555;
 	-moz-box-shadow:0 0 25px 0 #555555;	
 }
-.current_window_type img{
+.current_window_type .over1{
 	z-index: 101;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
-
+.current_window_type .over2{
+	z-index: 102;
+	position: absolute;
+	left: 0;
+	top: 0;	
+}
+.current_window_type .over3{
+	z-index: 103;
+	position: absolute;
+	left: 0;
+	top: 0;	
+}
+.current_window_type .over4{
+	z-index: 104;
+	position: absolute;
+	left: 0;
+	top: 0;	
+}
 
 #window_width{
 	width: 30px;
